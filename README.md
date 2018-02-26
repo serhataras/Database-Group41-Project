@@ -23,4 +23,4 @@ The system that we propose will bring together customers(users) and professional
 - Abdullah Özer
 
 ## Reports
-- [Proposal Report](https://github.com/serhataras/OnlineHiringSystem/blob/master/documentation/Proposal%20Report.pdf "Proposal Report")
+- [Proposal Report](https://github.com/serhataras/OnlineHiringSystem/blob/master/documentation/Project%20Proposal.pdf "Proposal Report")

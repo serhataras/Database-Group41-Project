@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bare - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/star-rating.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <style>
+      body {
+        padding-top: 54px;
+      }
+      @media (min-width: 992px) {
+        body {
+          padding-top: 56px;
+        }
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">HI-FI</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Jobs
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/public_html/create_job.html">Create Job</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/public_html/create_account.html">Sign Up</a>
+            </li>
+            <li class="nav-item" id="login">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Login form here!!! -->
+      <div id="myForm" class="d-none">
+          <form action="" id="loginForm" method="post">
+            <div>
+                <label for="email">Email | Username:</label>
+                <input type="email" name="email" id="email" class="form-control input-md">
+                <label for="password">Password:</label>
+                <input type="text" name="password" id="password" class="form-control input-md">
+                <button type="button" class="btn btn-primary" data-loading-text="Logging.."><em class="icon-ok"></em>Login</button>
+            </div>
+          </form>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label id="title_label" for="">Title: title here</label>
+          <p id="description">Description: description here baby</p>
+        </div>
+        <div class="col-md-6 border">
+          <label for="">Customer Info</label>
+          <div class="row">
+            <label id="name_label" for="">Name: name here</label>
+          </div>
+          <div class="row">
+            <label id="rating_label" for="">Rating: average rating here</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <label id="start_date_label" for="">Start Date:</label>
+        </div>
+        <br>
+        <div class="col-lg-12">
+          <label id="duration_label" for="">Duration:</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="offer">Proposed Offer:</label>
+          <input type="number" name="offer" id="offer" class="form-control input-md">
+        </div>
+        <div class="col-md-6">
+          <button id="make_offer" type="button" class="btn btn-primary"><em class="icon-ok"></em>Make Offer</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/star-rating.min.js"></script>
+    <!-- main vs -->
+    <script src="login.js"></script>
+    <script src="offer.js"></script>
+
+  </body>
+
+</html>

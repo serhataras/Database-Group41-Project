@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bare - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/star-rating.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/css/bootstrap-slider.min.css" rel="stylesheet">
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/star-rating.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js"></script>
+    <!-- main vs -->
+    <script src="login.js"></script>
+    <script src="job_listings.js"></script>
+    <script type="text/javascript" src="vendor/bootstrap-multiselect.js"></script>
+    <link rel="stylesheet" href="vendor/bootstrap-multiselect.css" type="text/css"/>
+    <!-- Custom styles for this template -->
+    <style>
+      body {
+        padding-top: 54px;
+      }
+      @media (min-width: 992px) {
+        body {
+          padding-top: 56px;
+        }
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">HI-FI</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Jobs
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/public_html/create_job.html">Create Job</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/public_html/create_account.html">Sign Up</a>
+            </li>
+            <li class="nav-item" id="login">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Login form here!!! -->
+      <div id="myForm" class="d-none">
+          <form action="" id="loginForm" method="post">
+            <div>
+                <label for="email">Email | Username:</label>
+                <input type="email" name="email" id="email" class="form-control input-md">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" class="form-control input-md">
+                <button type="button" class="btn btn-primary" data-loading-text="Logging.."><em class="icon-ok"></em>Login</button>
+            </div>
+          </form>
+      </div>
+<div class="row">
+
+
+      <div class="col-lg-4">
+        <label for="">Search Jobs in HI-FI</label>
+        <div class="row">
+          <input type="text" name="keyword" id="keyword" class="form-control input-md" placeholder="Search Keyword">
+        </div>
+        <br>
+        <div class="row">
+          <label for="email">Price Range:</label>
+          <b>100 TL</b><input type="text" value="" data-slider-value="[1000,3000]" data-slider-id='rangeSlider' name="range" id="range" class="form-control input-md span2" data-slider-min="100" data-slider-max="5000"><b>5000 TL</b>
+        </div>
+        <div class="row">
+          <label >Fields:</label>
+          <select class="form-control" name="field" id="field" multiple="multiple">
+          <option selected="selectedField">Choose Fields</option>
+        </select>
+        </div>
+
+        <div class="row">
+          <label for="duration">Duration:</label>
+          <input type="number" name="duration" id="duration" class="form-control input-md" placeholder="In terms of days">
+        </div>
+        <div class="row">
+          <label for="start_date">Start Date:</label>
+          <input type="date" name="start_date" id="start_date" class="form-control input-md">
+        </div>
+        <div class="row">
+          <label >Location:</label>
+          <select class="form-control" name="city" id="city">
+          <option value="-1" selected="selectedCity">Choose City</option>
+        </select>
+        <br>
+        <select class="form-control" name="street" id="street">
+        <option value="-1" selected="selectedStreet">Choose Street</option>
+      </select>
+        </div>
+        <br>
+                  <button id="filter" type="button" class="btn btn-primary" data-loading-text="Filtering.."><em class="icon-ok"></em>Filter</button>
+      </div>
+      <div class="col-lg-8">
+        <div id="jobs">
+          <div class="row">
+            <label for="">Filtered Jobs</label>
+          </div>
+          <br>
+        </div>
+      </div>
+      </div>
+    </div>
+
+
+
+  </body>
+
+</html>

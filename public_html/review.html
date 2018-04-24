@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bare - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS-->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="vendor/star-rating.css" media="all" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap core JavaScript
+    <script src="vendor/jquery/jquery.min.js"></script> -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/star-rating.js" type="text/javascript"></script>
+    <!-- main vs -->
+    <script src="review.js" type="text/javascript"></script>
+    <script src="login.js" type="text/javascript"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">HI-FI</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Jobs
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/public_html/create_job.html">Create Job</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/public_html/create_account.html">Sign Up</a>
+            </li>
+            <li class="nav-item" id="login">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+      <!-- Login form here!!! -->
+      <div id="myForm" class="d-none">
+          <form action="" id="loginForm" method="post">
+            <div>
+                <label for="email">Email | Username:</label>
+                <input type="email" name="email" id="email" class="form-control input-md">
+                <label for="password">Password:</label>
+                <input type="text" name="password" id="password" class="form-control input-md">
+                <button type="button" class="btn btn-primary" data-loading-text="Logging.."><em class="icon-ok"></em>Login</button>
+            </div>
+          </form>
+      </div>
+      <form>
+      <div class="">
+        <label > Review </label>
+        <div class="row">
+          <label >Job Title Here</label>
+        </div>
+        <div class="row">
+          <label for="performance">Performance:</label>
+          <input id="performance" name="performance" class="rating rating-loading" type="text" title="" data-min="0" data-max="5" data-step="1">
+        </div>
+        <div class="row">
+          <label for="manner">Manner:</label>
+          <input id="manner" name="manner" class="rating rating-loading" type="text" title="" data-min="0" data-max="5" data-step="1">
+        </div>
+        <div class="row">
+          <label for="satisfaction">Satisfaction:</label>
+          <input id="satisfaction" name="satisfaction" class="rating rating-loading" type="text" title="" data-min="0" data-max="5" data-step="1">
+        </div>
+        <button id="upload" type="button" class="btn btn-primary" data-loading-text="Uploading.."><em class="icon-ok"></em>Upload</button>
+      </div>
+    </form>
+
+    </div>
+
+  </body>
+
+</html>

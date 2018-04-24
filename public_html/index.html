@@ -12,70 +12,48 @@
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <style>
-      body {
-        padding-top: 54px;
-      }
-      @media (min-width: 992px) {
-        body {
-          padding-top: 56px;
-        }
-      }
-
-    </style>
-
-  </head>
-
-  <body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Page Content -->
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h1 class="mt-5">A Bootstrap 4 Starter Template</h1>
-          <p class="lead">Complete with pre-defined file paths and responsive navigation!</p>
-          <ul class="list-unstyled">
-            <li>Bootstrap 4.0.0</li>
-            <li>jQuery 3.3.0</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
+    <link href="vendor/star-rating.min.css" rel="stylesheet">
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/star-rating.min.js"></script>
+    <!-- main vs -->
+    <script src="login.js"></script>
+    <script src="index.js"></script>
+  </head>
 
+  <body>
+    <div id="header"></div>
+    <!-- Page Content -->
+    <div class="container">
+
+      <div class="row">
+        <label for="">HI-FI</label>
+      </div>
+      <div class="row">
+        <p>Lorem ipsum ksdvksdkfvks kjsnfvkj sfkdv kjsdfnvk jsdfkjv kjsndfvk skdfv skfd vksdfkv skdf vksndf vksnd ksd vksdfvksk ksdf vksdf vkjsfkj skjdf vksdfvksknv skdfvksd vksfvks ksdfkv sdfk skf kjdfv ksjd kjsdf vkjef vkjdf k  pq  qporfj ;oaiijv 'powaekf[ \qkwep o'qpjf q]'</p>
+      </div>
+      <div class="row">
+        <div class="input-group">
+      <input id="searchBar" type="text" class="form-control" placeholder="Search for...">
+      <span class="input-group-btn">
+        <button id="searchKeyword" class="btn btn-secondary" type="button">Go!</button>
+      </span>
+    </div>
+      </div>
+      <br>
+      <div class="row">
+        <button type="button" class="btn btn-danger"><em class="icon-ok"></em>Create Job</button>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div id="jobs" class="container">
+      <div class="row">
+        <label for="">Example Jobs</label>
+      </div>
+      <br>
+    </div>
   </body>
 
 </html>

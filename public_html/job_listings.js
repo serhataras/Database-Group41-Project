@@ -5,7 +5,20 @@ var selectedFields = [];
 var range;
 
 var offerListener = function(index){
-    console.log(index);
+  var ajaxRequest = $.ajax({
+      url: "login.php",
+      type: "GET",
+      data: {type: 2,
+      selected_job_ID: globalJobList[index].job_ID}
+  });
+
+  ajaxRequest.done(function (response, textStatus, jqXHR){
+        if (response != 1) {
+          document.location.href = "/public_html/offer.html";
+        }else{
+          alert("You need to be logged in to see details!");
+        }
+  });
 }
 
 var globalJobList;
@@ -14,6 +27,11 @@ var filteredJobsLabel = "<div class=\"row\">"+
 "</div>";
 
 $(function(){
+
+$("#header").load("nav-bar.html", function() {
+  $.getScript("login.js");
+});
+
   var ajaxRequestField;
   var ajaxRequestCity;
   var ajaxRequestStreet;
@@ -28,9 +46,9 @@ $(function(){
     $('#field').multiselect({
       onChange: function(option, checked, select) {
         if (checked) {
-          selectedFields.push($(option).val());
+          selectedFields.push($(option).val() + 1);
         }else{
-          const index = selectedFields.indexOf($(option).val());
+          const index = selectedFields.indexOf($(option).val() + 1);
           if (index !== -1)
               selectedFields.splice(index, 1);
         }
@@ -78,7 +96,7 @@ $(function(){
 
     ajaxRequestFilter = $.ajax({url: "job_listings.php", type: "GET", data: data });
     ajaxRequestFilter.done(function (response, textStatus, jqXHR){
-      console.log(response);
+      // console.log(response);
       globalJobList = JSON.parse(response);
       $('#jobs').children().remove();
       $('#jobs').append(filteredJobsLabel);

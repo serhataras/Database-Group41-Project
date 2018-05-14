@@ -5,6 +5,11 @@ var industries;
 var costRanges;
 
 $(function(){
+
+$("#header").load("nav-bar.html", function() {
+  $.getScript("login.js");
+});
+
   var ajaxRequestCity;
   var ajaxRequestStreet;
   var ajaxRequestIndustry;
@@ -74,6 +79,9 @@ $(function(){
     ajaxRequestPost = $.ajax({url: "create_job.php", type: "POST", data: data });
     ajaxRequestPost.done(function (response, textStatus, jqXHR){
       console.log(response);
+      if (response == 'created') {
+        document.location.href = "/public_html/";
+      }
     });
   });
 

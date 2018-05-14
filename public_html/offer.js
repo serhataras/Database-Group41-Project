@@ -4,6 +4,15 @@ var customerInfo;
 var timeInfo;
 
 $(function(){
+
+  $( window ).on("unload",function (e) {
+    $.ajax({url: "offer.php", async: false, type: "GET", data: { type: -1 } });
+  });
+
+$("#header").load("nav-bar.html", function() {
+  $.getScript("login.js");
+});
+
   var ajaxRequestGetJobInfo;
   var ajaxRequestTimeInfo;
   var ajaxRequestGetCustomerInfo;
@@ -11,8 +20,19 @@ $(function(){
   var ajaxRequestPost;
   var timePeriodId = 0;
 
+  $.ajax({url: "offer.php", type: "GET", data: { type: 0 } }).done(function (response, textStatus, jqXHR){
+    if (response != 'false') {
+      console.log('response');
+      var result = JSON.parse(response);
+      $("#make_offer").addClass("d-none");
+      $("#back_profile").removeClass("d-none");
+      $('#offer').val(result[0].cost).prop("disabled", true);
+    }
+  });
+
   ajaxRequestGetJobInfo = $.ajax({url: "offer.php", type: "GET", data: { type: 1 } });
   ajaxRequestGetJobInfo.done(function (response, textStatus, jqXHR){
+    // console.log(response);
     jobInfo = JSON.parse(response);
 
     $("#title_label").eq(0).html("Title: " + jobInfo[0].job_title);
@@ -37,9 +57,9 @@ $(function(){
       console.dir(customerInfo[0]);
       var sum = 0;
       for (var i = 0; i < customerInfo.length; i++) {
-        sum = sum + customerInfo[i].manner + customerInfo[i].satisfaction + customerInfo[i].performance;
+        sum = sum + parseInt(customerInfo[i].manner) + parseInt(customerInfo[i].satisfaction) + parseInt(customerInfo[i].performance);
       }
-      $("#rating_label").eq(0).html("Avg. Rating: " + sum/3*customerInfo.length);
+      $("#rating_label").eq(0).html("Avg. Rating: " + sum/(3*customerInfo.length));
       $("#name_label").eq(0).html("Name: " + customerInfo[0].name);
     }
 
@@ -51,11 +71,15 @@ $(function(){
       title: jobInfo[0].job_title
     }
 
-    console.dir(data);
+    // console.dir(data);
 
     ajaxRequestPost = $.ajax({url: "offer.php", type: "POST", data: data });
     ajaxRequestPost.done(function (response, textStatus, jqXHR){
-      console.log(response);
+      if (response == 'true') {
+        document.location.href = "/public_html/index.html";
+      }else {
+        console.log("there is a mistake with that!");
+      }
     });
 
     ajaxRequestPost.fail(function (jqXHR, textStatus ){

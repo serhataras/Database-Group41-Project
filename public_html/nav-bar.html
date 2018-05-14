@@ -1,41 +1,31 @@
-<!-- Navigation -->
-<script src="login.js"></script>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="#">HI-FI</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Jobs
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/public_html/create_job.html">Create Job</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/public_html/create_account.html">Sign Up</a>
-        </li>
-        <li class="nav-item" id="login">
-          <a class="nav-link" href="#">Login</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
 
-<!-- Login form here!!! -->
-<div id="myForm" class="d-none">
-    <form action="login.php" id="loginForm" method="post">
-      <div>
-          <label for="email">Email | Username:</label>
-          <input type="email" name="email" id="email" class="form-control input-md">
-          <label for="password">Password:</label>
-          <input type="password" name="password" id="password" class="form-control input-md">
-          <button type="button" class="btn btn-primary" data-loading-text="Logging.."><em class="icon-ok"></em>Login</button>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/public_html/">HI-FI</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Jobs
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="create_job" href="#">Create Job</a>
+            </li>
+            <li class="nav-item" id="sign_up">
+              <a class="nav-link" href="/public_html/create_account.html">Sign Up</a>
+            </li>
+            <li class="nav-item" id="login">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+
+            <li class="nav-item d-none" id="profile">
+              <a class="nav-link" href="/public_html/profile.html">Profile</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </form>
-</div>
+    </nav>

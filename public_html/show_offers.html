@@ -12,6 +12,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/star-rating.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="theme.css" rel="stylesheet">
@@ -19,14 +20,14 @@
   </head>
 
   <body>
-<div id="header"></div>
+    <div id="header"></div>
 
     <!-- Page Content -->
-    <div class="container col-lg-4">
-      <label> Create Job </label>
-      <!-- create_account form here!!! -->
-      <div id="createForm">
-          <form action="" id="create_jobForm" method="post">
+    <div class="container">
+      <label> Details of Job </label>
+      <div class="row col-lg-8">
+      <div id="updateForm">
+          <form action="" id="update_jobForm">
             <div>
                 <label for="title">Title:</label>
                 <input type="text" name="title" id="title" required class="form-control input-md">
@@ -60,20 +61,29 @@
             <select class="form-control" name="industry" id="industry">
             <option selected="selectedIndustry">Choose Industry</option>
           </select>
-
-      <br>
-                <button id="create_job_button" type="button" class="btn btn-primary" data-loading-text="Creating.."><em class="icon-ok"></em>Create Job</button>
+            <br>
+              <button id="update_job_button" type="button" class="btn btn-primary d-none">Update Job</button>
+              <br>
+              <a id="go_back_button" href="/public_html/profile.html" type="button" class="btn btn-primary">Go Back</a>
             </div>
           </form>
       </div>
+      </div>
+
+      <div id="offers_made" class="row">
+        <div class="row col-lg-12">
+        <label for="">Offers For This Job</label>
+        </div>
+      </div>
+
     </div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/star-rating.min.js"></script>
     <!-- main vs -->
-    <script src="login.js"></script>
-    <script src="create_job.js"></script>
+    <script src="show_offers.js"></script>
 
   </body>
 

@@ -19,65 +19,15 @@
     <script src="login.js"></script>
     <script src="profile.js"></script>
     <!-- Custom styles for this template -->
-    <style>
-      body {
-        padding-top: 54px;
-      }
-      @media (min-width: 992px) {
-        body {
-          padding-top: 56px;
-        }
-      }
-
-    </style>
+    <link href="theme.css" rel="stylesheet">
 
   </head>
 
   <body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">HI-FI</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Jobs
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/public_html/create_job.html">Create Job</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/public_html/create_account.html">Sign Up</a>
-            </li>
-            <li class="nav-item" id="login">
-              <a class="nav-link" href="#">Login</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
+    <div id="header"></div>
     <!-- Page Content -->
     <div class="container">
 
-      <!-- Login form here!!! -->
-      <div id="myForm" class="d-none">
-          <form action="" id="loginForm" method="post">
-            <div>
-                <label for="email">Email | Username:</label>
-                <input type="email" name="email" id="email" class="form-control input-md">
-                <label for="password">Password:</label>
-                <input type="password" name="password" id="password" class="form-control input-md">
-                <button type="button" class="btn btn-primary" data-loading-text="Logging.."><em class="icon-ok"></em>Login</button>
-            </div>
-          </form>
-      </div>
 <div class="row">
 
 
@@ -113,11 +63,18 @@
           <label id="major"></label>
         </div>
         <br>
-        <button id="sign_out" type="button" class="btn btn-primary"><em class="icon-ok"></em>Sign Out</button>
+        <button id="sign_out" type="button" onclick="signOut()" class="btn btn-primary"><em class="icon-ok"></em>Sign Out</button>
       </div>
       <div class="col col-lg-8">
+
           <div class="row">
             <label for="">Job Informations</label>
+          </div>
+          <br>
+          <div id="offers" class="row">
+            <div class="row col-lg-12">
+            <label for="">Offers</label>
+            </div>
           </div>
           <br>
           <div id="posted_jobs" class="row">

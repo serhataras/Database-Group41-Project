@@ -6,6 +6,11 @@ var majors;
 var fields;
 
 $(function(){
+
+  $("#header").load("nav-bar.html", function() {
+    $.getScript("login.js");
+});
+
   var ajaxRequestCity;
   var ajaxRequestStreet;
   var ajaxRequestEdLevel;
@@ -98,11 +103,12 @@ $(function(){
       field: fields[$('#field').val()].field_ID
     }
 
-    console.dir(data);
-
     ajaxRequestPost = $.ajax({url: "create_account.php", type: "POST", data: data });
     ajaxRequestPost.done(function (response, textStatus, jqXHR){
-      console.log(response);
+      // console.log(response);
+      if (response == 'true') {
+        document.location.href = "/public_html/";
+      }
     });
   });
 

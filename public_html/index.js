@@ -1,5 +1,34 @@
 var detailsListener = function(index){
-    console.log(index);
+  var ajaxRequest = $.ajax({
+      url: "login.php",
+      type: "GET",
+      data: {type: 2,
+      selected_job_ID: globalJobList[index].job_ID}
+  });
+
+  ajaxRequest.done(function (response, textStatus, jqXHR){
+        if (response == 'true') {
+          document.location.href = "/public_html/offer.html";
+        }else{
+          alert("You need to be logged in to see details!");
+        }
+  });
+}
+
+var createJobListener = function(){
+  var ajaxRequest = $.ajax({
+      url: "login.php",
+      type: "GET",
+      data: {type: 1}
+  });
+
+  ajaxRequest.done(function (response, textStatus, jqXHR){
+        if (response == 'true') {
+          document.location.href = "/public_html/create_job.html";
+        }else{
+          alert("You need to be logged in to create a new job!");
+        }
+  });
 }
 
 var globalJobList;
@@ -7,8 +36,11 @@ var exampleJobsLabel = "<div class=\"row\">"+
   "<label>Example Jobs</label>"+
 "</div>";
 
-$(function(){
-  $("#header").load("nav-bar.html");
+$(document).ready(function(){
+  $("#header").load("nav-bar.html", function() {
+    $.getScript("login.js");
+});
+
     var ajaxRequest1;
     ajaxRequest1 = $.ajax({
         url: "index.php",
@@ -20,7 +52,7 @@ $(function(){
 
     ajaxRequest1.done(function (response, textStatus, jqXHR){
           globalJobList = JSON.parse(response);
-          console.dir(globalJobList);
+          // console.dir(globalJobList);
           $('#jobs').children().remove();
           $('#jobs').append(exampleJobsLabel);
           for (var i = 0; i < globalJobList.length; i++) {
@@ -46,7 +78,7 @@ $(function(){
   $('#searchKeyword').click(function(){
     var ajaxRequest;
     var keyword = $('#searchBar').val();
-    console.log(keyword);
+    // console.log(keyword);
     ajaxRequest = $.ajax({
         url: "index.php",
         type: "GET",
@@ -73,6 +105,10 @@ $(function(){
           "</div>"+
         "</div>"+
         "<br>");
+      }
+
+      if (globalJobList.length == 0) {
+        $('#jobs').append("No results found for " + keyword + " !");
       }
     });
 

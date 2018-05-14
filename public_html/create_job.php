@@ -32,9 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $zip_code_ID = 0;
   $time_period_ID = 0;
   $job_ID = 0;
-  $user_ID = 1; //TODO: will be determined from session variables.
-  $user_email = " ";
-  $user_password = " ";
+  $user_ID = $_SESSION['user_ID'];
   $sql = "INSERT INTO zip_codes VALUES (0, {$_POST['address']['zip_code']})";
   $result = $conn->query($sql);
   $zip_code_ID = $conn->insert_id;
@@ -45,15 +43,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   $start_date = date('Y-m-d', strtotime($_POST['start_date']));
   $end_date = date('Y-m-d', strtotime($start_date." + {$_POST['duration']} days"));
-  $sql = "INSERT INTO time_period VALUES (0, STR_TO_DATE('$start_date', '%d/%m/%Y'), STR_TO_DATE('$end_date', '%d/%m/%Y'))";
+  $sql = "INSERT INTO time_period VALUES (0, '{$start_date}', {$_POST['duration']})";
   $result = $conn->query($sql);
   $time_period_ID = $conn->insert_id;
 
   $current_time = date('Y-m-d H:i:s');
-  $sql = "INSERT INTO job VALUES (0, {$_POST['title']}, {$_POST['description']}, {$current_time}, {$current_time}, {$_POST['minimum_cost']},".
-  " '$address_ID', '$time_period_ID', null, '$user_ID')";
+  $sql = "INSERT INTO job VALUES (0, '{$_POST['title']}', '{$_POST['description']}', '{$current_time}', '{$current_time}', {$_POST['field']}, {$_POST['minimum_cost']},".
+  " {$address_ID}, {$time_period_ID}, null, {$user_ID})";
   $result = $conn->query($sql);
   $job_ID = $conn->insert_id;
-  echo $job_ID;
+
+  $sql = "INSERT INTO state VALUES (1, {$job_ID})";
+  $result = $conn->query($sql);
+  echo "created";
 }
 ?>

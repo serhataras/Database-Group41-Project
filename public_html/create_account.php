@@ -52,10 +52,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   $current_time = date('Y-m-d H:i:s');
   $birthdate = date('Y-m-d', strtotime($_POST['birthdate']));
-  $sql = "INSERT INTO user VALUES (0, {$_POST['name']}, {$_POST['surname']}, {$_POST['email']}, {$_POST['username']}, {$_POST['password']},".
-  " '$current_time', '$current_time', {$_POST['gender']}, '$birthdate', {$address_ID}, {$_POST['account_type']}, {$education_info_ID})";
+  $sql = "INSERT INTO user VALUES (0, '{$_POST['name']}', '{$_POST['surname']}', '{$_POST['email']}', '{$_POST['username']}', '{$_POST['password']}',".
+  " '{$current_time}', '{$current_time}', '{$_POST['gender']}', '{$birthdate}', {$address_ID}, {$_POST['account_type']}, {$education_info_ID})";
   $result = $conn->query($sql);
+  echo $sql;
   $user_ID = $conn->insert_id;
-  echo $user_ID;
+  $_SESSION['user_ID'] = $user_ID;
+  $_SESSION['email'] = $_POST['email'];
+  echo isset($_SESSION['user_ID']) ? 'true' : 'false';
 }
 ?>
